@@ -1,0 +1,22 @@
+{
+  "name": "webpack_templ",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/na181286/webpack_templ.git"
+  },
+  "author": "Natali Verified",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/na181286/webpack_templ/issues"
+  },
+  "homepage": "https://github.com/na181286/webpack_templ#readme",
+  "dependencies": {
+    "eslint": "^8.39.0"
+  }
+}
