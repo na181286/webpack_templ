@@ -1,4 +1,4 @@
-import { sendRequest } from "../utils/requests.js";
+import { sendRequest } from "../utils/requests";
 
 export function createPost(id, name, text) {
   let newPost = document.createElement("div");

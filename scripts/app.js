@@ -1,17 +1,1 @@
-import { sendRequest } from "./utils/requests.js";
-import { createPost, addPost } from "./post/post.js";
-
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  addPost();
-});
-
-sendRequest("https://jsonplaceholder.typicode.com/posts", "GET")
-  .then((data) => {
-    return data.json();
-  })
-  .then((response) => {
-    response.forEach((item) => createPost(item.id, item.title, item.body));
-  })
-  .catch((err) => console.log(err));
+(()=>{"use strict";const e=(e,t,o)=>fetch(e);function t(t,o,n){let l=document.createElement("div");l.className="post-item",l.id=t;let c=document.createElement("div");c.className="post-title",c.innerHTML=o;let s=document.createElement("div");s.className="post-text",s.innerHTML=n,l.appendChild(c),l.appendChild(s),document.getElementById("posts").children.length>0?document.getElementById("posts").insertBefore(l,document.getElementById("posts").firstChild):document.getElementById("posts").appendChild(l),l.addEventListener("click",(t=>{t.preventDefault();let o=t.currentTarget.id;e(`https://jsonplaceholder.typicode.com/posts/${o}`,"DELETE").then((e=>console.log(e)))}))}document.querySelector("form").addEventListener("submit",(o=>{o.preventDefault(),console.log(45),function(){const o=document.querySelector("form"),n=new FormData(o);t(o.querySelector("[name='id']").value,o.querySelector("[name='body']").value,o.querySelector("[name='title']").value),e("https://jsonplaceholder.typicode.com/posts","POST",n).then((e=>e.json())).then((e=>console.log(e))).catch((e=>console.log(e)))}()})),e("https://jsonplaceholder.typicode.com/posts","GET").then((e=>e.json())).then((e=>{e.forEach((e=>t(e.id,e.title,e.body)))})).catch((e=>console.log(e)))})();
